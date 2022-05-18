@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Clevyr\LaravelGeocoder\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelGeocoderCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-geocoder';
 
     public $description = 'My command';
 
