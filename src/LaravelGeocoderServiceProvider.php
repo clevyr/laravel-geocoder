@@ -17,9 +17,6 @@ class LaravelGeocoderServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-geocoder')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-geocoder_table')
-            ->hasCommand(LaravelGeocoderCommand::class);
+            ->hasConfigFile();
     }
 }
