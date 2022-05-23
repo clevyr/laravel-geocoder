@@ -8,14 +8,14 @@ use Clevyr\LaravelGeocoder\LaravelGeocoderServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Clevyr\\LaravelGeocoder\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
-    }
+    // protected function setUp(): void
+    // {
+    //     parent::setUp();
+    //
+    //     Factory::guessFactoryNamesUsing(
+    //         fn (string $modelName) => 'Clevyr\\LaravelGeocoder\\Database\\Factories\\'.class_basename($modelName).'Factory'
+    //     );
+    // }
 
     protected function getPackageProviders($app)
     {

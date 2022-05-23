@@ -4,7 +4,7 @@ namespace Clevyr\LaravelGeocoder\GeoAdapters;
 
 use Clevyr\LaravelGeocoder\Contracts\GeoAdapter;
 
-class TestGeoAdapter implements GeoAdapter {
+class Test implements GeoAdapter {
 
     public const LAT = 35.4771302;
     public const LNG = -97.5283204;
