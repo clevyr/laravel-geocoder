@@ -4,7 +4,6 @@ namespace Clevyr\LaravelGeocoder;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Clevyr\LaravelGeocoder\Commands\LaravelGeocoderCommand;
 
 class LaravelGeocoderServiceProvider extends PackageServiceProvider
 {

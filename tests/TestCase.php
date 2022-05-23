@@ -2,9 +2,9 @@
 
 namespace Clevyr\LaravelGeocoder\Tests;
 
+use Clevyr\LaravelGeocoder\LaravelGeocoderServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Clevyr\LaravelGeocoder\LaravelGeocoderServiceProvider;
 
 class TestCase extends Orchestra
 {

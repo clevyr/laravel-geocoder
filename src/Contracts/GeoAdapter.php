@@ -2,6 +2,7 @@
 
 namespace Clevyr\LaravelGeocoder\Contracts;
 
-interface GeoAdapter {
+interface GeoAdapter
+{
     public function getLatLngFromAddress(string $searchString);
 }

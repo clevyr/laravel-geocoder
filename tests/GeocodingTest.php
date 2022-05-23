@@ -1,7 +1,6 @@
 <?php
 
 use Clevyr\LaravelGeocoder\LaravelGeocoder;
-use Clevyr\LaravelGeocoder\UnsupportedAdapterError;
 use Illuminate\Support\Facades\Config;
 
 it('Geolocates successfully', function () {

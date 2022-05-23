@@ -4,9 +4,10 @@ namespace Clevyr\LaravelGeocoder\Traits;
 
 use Clevyr\LaravelGeocoder\LaravelGeocoder;
 
-trait IsGeocodable {
-
-    public function getLatAndLong() {
+trait IsGeocodable
+{
+    public function getLatAndLong()
+    {
         if (
             $this->address_line_1 == null ||
             $this->city == null ||
@@ -25,12 +26,12 @@ trait IsGeocodable {
         );
     }
 
-    public function addressIsDirty() {
+    public function addressIsDirty()
+    {
         return $this->isDirty('address_line_1') ||
             $this->isDirty('address_line_2') ||
             $this->isDirty('city') ||
             $this->isDirty('state') ||
             $this->isDirty('postal_code');
     }
-
 }

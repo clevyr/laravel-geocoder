@@ -2,9 +2,9 @@
 
 namespace Clevyr\LaravelGeocoder;
 
-use Clevyr\LaravelGeocoder\GeoAdapters;
-
-class UnsupportedAdapterError extends \Exception { }
+class UnsupportedAdapterError extends \Exception
+{
+}
 
 class LaravelGeocoder
 {
@@ -32,7 +32,7 @@ class LaravelGeocoder
         string $postal_code,
         string $country = 'US',
     ) {
-        if (!self::$adapter) {
+        if (! self::$adapter) {
             self::Init();
         }
 
@@ -64,22 +64,24 @@ class LaravelGeocoder
             . ',+' . $country;
     }
 
-    private static function Init() {
+    private static function Init()
+    {
         $adapter = \App::environment() == 'testing' ? (
             self::TEST
         ) : (
             config('geocoder.adapter')
         );
 
-        if (!in_array($adapter, self::SUPPORTED_ADAPTERS)) {
+        if (! in_array($adapter, self::SUPPORTED_ADAPTERS)) {
             self::ThrowUnsupportedAdapterError();
         }
 
         self::$adapter = self::GetAdapter($adapter);
     }
 
-    private static function GetAdapter(string $adapter) {
-        switch($adapter) {
+    private static function GetAdapter(string $adapter)
+    {
+        switch ($adapter) {
         case self::GOOGLE:
             return new GeoAdapters\Google();
         case self::MAPBOX:
@@ -91,12 +93,12 @@ class LaravelGeocoder
         }
     }
 
-    private static function ThrowUnsupportedAdapterError() {
+    private static function ThrowUnsupportedAdapterError()
+    {
         throw new UnsupportedAdapterError(
             config('geocoder.adapter')
             . ' is an unsupported geocoding adapter. Please select one of: '
             . implode(', ', self::SUPPORTED_ADAPTERS)
         );
     }
-
 }
