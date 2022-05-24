@@ -13,11 +13,17 @@ class GeocoderFake extends Model
 
     public static function makeForTest() {
         return self::make([
-            'address_line_1' => '123 Test Ln',
+            'name' => 'Clevyr',
+            'address_line_1' => '912 N Classen Blvd',
             'address_line_2' => null,
-            'city' => 'New York',
-            'state' => 'NY',
-            'postal_code' => '10001',
+            'city' => 'Oklahoma City',
+            'state' => 'OK',
+            'zip' => '73106',
         ]);
+    }
+
+    // Override the postal_code property with something specific to this model
+    public function getGeocoderPostalCodeAttribute() {
+        return 'zip';
     }
 }

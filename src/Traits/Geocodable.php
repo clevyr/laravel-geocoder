@@ -9,29 +9,55 @@ trait Geocodable
     public function getLatAndLong()
     {
         if (
-            $this->address_line_1 == null ||
-            $this->city == null ||
-            $this->state == null ||
-            $this->postal_code == null
+            $this->{$this->geocoderAddressLine1} == null ||
+            $this->{$this->geocoderCity} == null ||
+            $this->{$this->geocoderState} == null ||
+            $this->{$this->geocoderPostalCode} == null
         ) {
             return null;
         }
 
         return LaravelGeocoder::GetLatLngFromAddress(
-            $this->address_line_1,
-            $this->address_line_2,
-            $this->city,
-            $this->state,
-            $this->postal_code,
+            $this->{$this->geocoderAddressLine1},
+            $this->{$this->geocoderAddressLine2},
+            $this->{$this->geocoderCity},
+            $this->{$this->geocoderState},
+            $this->{$this->geocoderPostalCode},
+            $this->{$this->geocoderCountry} ?? 'US',
         );
     }
 
     public function addressIsDirty()
     {
-        return $this->isDirty('address_line_1') ||
-            $this->isDirty('address_line_2') ||
-            $this->isDirty('city') ||
-            $this->isDirty('state') ||
-            $this->isDirty('postal_code');
+        return $this->isDirty($this->geocoderAddressLine1) ||
+            $this->isDirty($this->geocoderAddressLine2) ||
+            $this->isDirty($this->geocoderCity) ||
+            $this->isDirty($this->geocoderState) ||
+            $this->isDirty($this->geocoderPostalCode) ||
+            $this->isDirty($this->geocoderCountry);
+    }
+
+    public function getGeocoderAddressLine1Attribute() {
+        return 'address_line_1';
+    }
+
+    public function getGeocoderAddressLine2Attribute() {
+        return 'address_line_2';
+    }
+
+    public function getGeocoderCityAttribute() {
+        return 'city';
+    }
+
+    public function getGeocoderStateAttribute() {
+        return 'state';
+    }
+
+    public function getGeocoderPostalCodeAttribute() {
+        return 'postal_code';
+    }
+
+    public function getGeocoderCountryAttribute() {
+        return 'country';
     }
 }
