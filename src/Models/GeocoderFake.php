@@ -11,7 +11,8 @@ class GeocoderFake extends Model
 
     protected $guarded = [];
 
-    public static function makeForTest() {
+    public static function makeForTest()
+    {
         return self::make([
             'name' => 'Clevyr',
             'address_line_1' => '912 N Classen Blvd',
@@ -23,7 +24,8 @@ class GeocoderFake extends Model
     }
 
     // Override the postal_code property with something specific to this model
-    public function getGeocoderPostalCodeAttribute() {
+    public function getGeocoderPostalCodeAttribute()
+    {
         return 'zip';
     }
 }

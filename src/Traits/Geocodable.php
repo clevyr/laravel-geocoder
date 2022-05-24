@@ -37,27 +37,33 @@ trait Geocodable
             $this->isDirty($this->geocoderCountry);
     }
 
-    public function getGeocoderAddressLine1Attribute() {
+    public function getGeocoderAddressLine1Attribute()
+    {
         return 'address_line_1';
     }
 
-    public function getGeocoderAddressLine2Attribute() {
+    public function getGeocoderAddressLine2Attribute()
+    {
         return 'address_line_2';
     }
 
-    public function getGeocoderCityAttribute() {
+    public function getGeocoderCityAttribute()
+    {
         return 'city';
     }
 
-    public function getGeocoderStateAttribute() {
+    public function getGeocoderStateAttribute()
+    {
         return 'state';
     }
 
-    public function getGeocoderPostalCodeAttribute() {
+    public function getGeocoderPostalCodeAttribute()
+    {
         return 'postal_code';
     }
 
-    public function getGeocoderCountryAttribute() {
+    public function getGeocoderCountryAttribute()
+    {
         return 'country';
     }
 }
