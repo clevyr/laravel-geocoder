@@ -2,6 +2,8 @@
 
 namespace Clevyr\LaravelGeocoder;
 
+use Illuminate\Support\Facades\App;
+
 class UnsupportedAdapterError extends \Exception
 {
 }
@@ -66,7 +68,7 @@ class LaravelGeocoder
 
     private static function Init()
     {
-        $adapter = \App::environment() == 'testing' ? (
+        $adapter = App::environment() == 'testing' ? (
             config('geocoder.test-adapter')
         ) : (
             config('geocoder.adapter')
