@@ -4,7 +4,7 @@ namespace Clevyr\LaravelGeocoder\Traits;
 
 use Clevyr\LaravelGeocoder\LaravelGeocoder;
 
-trait IsGeocodable
+trait Geocodable
 {
     public function getLatAndLong()
     {

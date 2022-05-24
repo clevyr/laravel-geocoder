@@ -18,6 +18,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Testing Geocoding Adapter
+    |--------------------------------------------------------------------------
+    |
+    | This value is the the adapter that you wish to use for geocoding while
+    | in your test environment .
+    | Supports the same options as 'adapter'
+    | Note: Be hesitant to change this, lest you accidentally geocode during
+    | your automated tests
+    |
+    */
+
+    'test-adapter' => 'test',
+
+    /*
+    |--------------------------------------------------------------------------
     | Test Lat / Lng
     |--------------------------------------------------------------------------
     |

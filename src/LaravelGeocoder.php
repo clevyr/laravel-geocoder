@@ -22,7 +22,7 @@ class LaravelGeocoder
      *
      * @var mixed
      */
-    private static $adapter;
+    public static $adapter;
 
     public static function GetLatLngFromAddress(
         string $address_line_1,
@@ -67,7 +67,7 @@ class LaravelGeocoder
     private static function Init()
     {
         $adapter = \App::environment() == 'testing' ? (
-            self::TEST
+            config('geocoder.test-adapter')
         ) : (
             config('geocoder.adapter')
         );
