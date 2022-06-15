@@ -18,6 +18,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Geocoding API Keys
+    |--------------------------------------------------------------------------
+    |
+    | Includes the API keys for the matching providers.
+    | TODO: Add full support for 'mapbox' adapter
+    |
+    */
+    'api_keys' => [
+        'google' => env('GOOGLE_CLOUD_API_KEY'),
+        'mapbox' => env('MAPBOX_API_KEY'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Testing Geocoding Adapter
     |--------------------------------------------------------------------------
     |
