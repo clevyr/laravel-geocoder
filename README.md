@@ -18,10 +18,10 @@ You can install the package via composer:
 composer require clevyr/laravel-geocoder
 ```
 
-You can publish the config file with:
+Next, publish the plugin assets:
 
 ```bash
-php artisan vendor:publish --tag="laravel-geocoder-config"
+php artisan vendor:publish --provider="Clevyr\LaravelGeocoder\LaravelGeocoderServiceProvider"
 ```
 
 This is the contents of the published config file (without descriptive comments):
