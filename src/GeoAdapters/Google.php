@@ -19,7 +19,7 @@ class Google implements GeoAdapter
             self::GEOCODE_API_PREFIX
             . '?address='
             . $searchString
-            . '&key=' . config('geocoding.api_keys.google')
+            . '&key=' . config('geocoder.api_keys.google')
         );
 
         $output = json_decode($geocodeFromLatLong);

@@ -11,8 +11,8 @@ class Test implements GeoAdapter
 
     public function getLatLngFromAddress(string $searchString)
     {
-        $lat = config('geocoding.test.lat') ?? self::LAT;
-        $lng = config('geocoding.test.lng') ?? self::LNG;
+        $lat = config('geocoder.test.lat') ?? self::LAT;
+        $lng = config('geocoder.test.lng') ?? self::LNG;
 
         // Return Clevyr's Lat/Lng
         return [
