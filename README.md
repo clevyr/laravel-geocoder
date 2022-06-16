@@ -82,6 +82,12 @@ class MyModel extends Model
 
 $model = MyModel::find(1);
 $coords = $model->getLatAndLong();
+
+$model->name = 'New Name';
+$model->addressIsDirty(); // false
+
+$model->address_line_1 = '123 Foo Ln.';
+$model->addressIsDirty(); // true
 ````
 
 ### Modifying the Model Geolocation Fields
