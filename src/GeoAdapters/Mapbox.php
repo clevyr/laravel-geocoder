@@ -8,6 +8,6 @@ class Mapbox implements GeoAdapter
 {
     public function getLatLngFromAddress(string $searchString)
     {
-        throw new \Exception('Not implemented for ' . self::class);
+        throw new \Exception('Not implemented for '.self::class);
     }
 }

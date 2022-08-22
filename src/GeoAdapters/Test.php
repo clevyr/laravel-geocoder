@@ -7,6 +7,7 @@ use Clevyr\LaravelGeocoder\Contracts\GeoAdapter;
 class Test implements GeoAdapter
 {
     public const LAT = 35.4771302;
+
     public const LNG = -97.5283204;
 
     public function getLatLngFromAddress(string $searchString)

@@ -138,6 +138,12 @@ composer test
 composer analyse
 ```
 
+## [Laravel Pint](https://laravel.com/docs/9.x/pint)
+Laravel Pint is an opinionated PHP code style fixer for minimalists.
+```bash
+./vendor/bin/pint
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

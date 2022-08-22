@@ -11,7 +11,9 @@ class UnsupportedAdapterError extends \Exception
 class LaravelGeocoder
 {
     private const GOOGLE = 'google';
+
     private const MAPBOX = 'mapbox';
+
     private const TEST = 'test';
 
     private const SUPPORTED_ADAPTERS = [
@@ -59,11 +61,11 @@ class LaravelGeocoder
         string $country = 'US',
     ) {
         return str_replace(' ', '+', $address_line_1)
-            . ($address_line_2 == null ? '' : '+' . str_replace(' ', '+', $address_line_2))
-            . ',+' . str_replace(' ', '+', $city)
-            . ',+' . $state
-            . ',+' . str_replace(' ', '+', $postal_code)
-            . ',+' . $country;
+            .($address_line_2 == null ? '' : '+'.str_replace(' ', '+', $address_line_2))
+            .',+'.str_replace(' ', '+', $city)
+            .',+'.$state
+            .',+'.str_replace(' ', '+', $postal_code)
+            .',+'.$country;
     }
 
     private static function Init()
@@ -84,14 +86,14 @@ class LaravelGeocoder
     private static function GetAdapter(string $adapter)
     {
         switch ($adapter) {
-        case self::GOOGLE:
-            return new GeoAdapters\Google();
-        case self::MAPBOX:
-            return new GeoAdapters\Mapbox();
-        case self::TEST:
-            return new GeoAdapters\Test();
-        default:
-            return null;
+            case self::GOOGLE:
+                return new GeoAdapters\Google();
+            case self::MAPBOX:
+                return new GeoAdapters\Mapbox();
+            case self::TEST:
+                return new GeoAdapters\Test();
+            default:
+                return null;
         }
     }
 
@@ -99,8 +101,8 @@ class LaravelGeocoder
     {
         throw new UnsupportedAdapterError(
             config('geocoder.adapter')
-            . ' is an unsupported geocoding adapter. Please select one of: '
-            . implode(', ', self::SUPPORTED_ADAPTERS)
+            .' is an unsupported geocoding adapter. Please select one of: '
+            .implode(', ', self::SUPPORTED_ADAPTERS)
         );
     }
 }

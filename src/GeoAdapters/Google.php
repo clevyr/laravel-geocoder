@@ -10,6 +10,7 @@ use Clevyr\LaravelGeocoder\Contracts\GeoAdapter;
 class Google implements GeoAdapter
 {
     public const OK = 'OK';
+
     public const GEOCODE_API_PREFIX = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     public function getLatLngFromAddress(string $searchString)
@@ -17,9 +18,9 @@ class Google implements GeoAdapter
         //Send request and receive json data by address
         $geocodeFromLatLong = file_get_contents(
             self::GEOCODE_API_PREFIX
-            . '?address='
-            . $searchString
-            . '&key=' . config('geocoder.api_keys.google')
+            .'?address='
+            .$searchString
+            .'&key='.config('geocoder.api_keys.google')
         );
 
         $output = json_decode($geocodeFromLatLong);
