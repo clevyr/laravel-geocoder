@@ -51,7 +51,7 @@ GOOGLE_CLOUD_API_KEY=
 ## Usage
 
 ```php
-use Clevyr\LaravelGeocoder;
+use Clevyr\LaravelGeocoder\LaravelGeocoder;
 
 $coords = LaravelGeocoder::GetLatLngFromAddress(
     '123 Test Ln',
@@ -64,8 +64,8 @@ $coords = LaravelGeocoder::GetLatLngFromAddress(
 echo $coords;
 
 // [
-//     'lat' => 35.4771302,
-//     'lng' => -97.5283204,
+//     "lat" => 40.7607184,
+//     "lng" => -73.9613766,
 // ]
 ```
 
